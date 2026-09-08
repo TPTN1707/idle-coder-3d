@@ -2,58 +2,78 @@ from ursina import *
 
 class OfficeRoom:
     def __init__(self):
-        # 1. Spawn Floor (Large gray plane)
+        # 1. Floor (Soft light warm gray pastel)
         self.floor = Entity(
             model='plane',
-            color=color.light_gray,
+            color=color.rgb(230, 230, 225),
             scale=(20, 1, 20),
             position=(0, 0, 0)
         )
 
-        # 2. Spawn Back Wall (Thick wall behind the desk)
+        # 2. Back Wall (Soft warm gray)
         self.back_wall = Entity(
             model='cube',
-            color=color.gray,
-            scale=(20, 10, 1),
+            color=color.rgb(215, 215, 210),
+            scale=(20, 10, 0.5),
             position=(0, 5, 10)
         )
 
-        # 3. Spawn Side Wall (Left wall of the room)
+        # 3. Left Wall (Soft warm gray)
         self.left_wall = Entity(
             model='cube',
-            color=color.gray,
-            scale=(1, 10, 20),
+            color=color.rgb(215, 215, 210),
+            scale=(0.5, 10, 20),
             position=(-10, 5, 0)
         )
 
-        # 4. Spawn Desk (Wooden table. Top surface is at Y = 1.5)
+        # 4. Desk (Pastel light wood color. Top surface is at Y = 1.2)
         self.desk = Entity(
             model='cube',
-            color=color.brown,
-            scale=(4, 1.5, 2),
-            position=(0, 0.75, 5) # Center is raised to Y = 0.75, making top surface Y = 1.5
+            color=color.rgb(190, 145, 120),
+            scale=(4.0, 1.2, 2.0),
+            position=(0, 0.6, 5) # Perfectly sits on the floor
         )
 
-        # 5. Spawn Level 1 CRT Monitor (Sits exactly on top of the desk)
-        self.monitor = Entity(
+        # 5. Monitor Body (Dark slate gray CRT body)
+        self.monitor_body = Entity(
             model='cube',
-            color=color.black,
-            scale=(1.2, 1.0, 1.0),
-            position=(0, 2.0, 5.2) # Raised to Y = 2.0 (Desk top Y=1.5 + half monitor height Y=0.5)
+            color=color.rgb(60, 65, 70),
+            scale=(1.4, 1.0, 1.0),
+            position=(0, 1.7, 5.3) # Placed on the desk
+        )
+        
+        # 6. Monitor Screen (Glowing retro green screen on the front of the monitor body)
+        self.monitor_screen = Entity(
+            model='cube',
+            color=color.rgb(50, 200, 100), # Retro green glow
+            scale=(1.2, 0.8, 0.05),
+            position=(0, 1.7, 4.79) # Offset slightly forward
         )
 
-        # 6. Spawn Keyboard (Flat gray plate on the desk)
+        # 7. Keyboard (Sleek light gray)
         self.keyboard = Entity(
             model='cube',
-            color=color.light_gray,
-            scale=(1.5, 0.1, 0.6),
-            position=(0, 1.55, 4.5)
+            color=color.rgb(210, 210, 210),
+            scale=(1.6, 0.08, 0.6),
+            position=(0, 1.24, 4.4)
         )
 
-        # 7. Spawn Level 1 Office Chair
-        self.chair = Entity(
+        # 8. Office Chair (Constructed from distinct parts: base, seat, backrest)
+        self.chair_base = Entity(
             model='cube',
-            color=color.dark_gray,
-            scale=(1.2, 1.0, 1.2),
-            position=(0, 0.5, 3.2) # Placed behind the desk
+            color=color.rgb(45, 45, 45),
+            scale=(0.2, 0.6, 0.2),
+            position=(0, 0.3, 3.2)
+        )
+        self.chair_seat = Entity(
+            model='cube',
+            color=color.rgb(65, 105, 120), # Teal blue cushion
+            scale=(1.2, 0.15, 1.2),
+            position=(0, 0.6, 3.2)
+        )
+        self.chair_back = Entity(
+            model='cube',
+            color=color.rgb(65, 105, 120),
+            scale=(1.2, 1.0, 0.15),
+            position=(0, 1.15, 2.65)
         )
