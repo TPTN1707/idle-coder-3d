@@ -2,6 +2,7 @@ from ursina import *
 from src.core.state import GameState
 from src.world.office import OfficeRoom
 
+# Initialize Ursina window with customized settings
 app = Ursina(
     title="3D Idle IT Coder",
     borderless=False
@@ -11,12 +12,18 @@ app = Ursina(
 state = GameState()
 office = OfficeRoom()
 
-# 2. Configure Static Isometric Studio Camera for Idle Game view
-# We position the camera diagonally and tilt it downwards
-camera.position = (8, 8, -6)
-camera.rotation = (32, -50, 0) # Pitch (X), Yaw (Y), Roll (Z)
+# 2. Configure Beautiful Isometric Orthographic Camera
+# Orthographic projection eliminates perspective distortion, creating a clean low-poly style
+camera.orthographic = True
+camera.fov = 6.0 # Zoom level (lower value is closer)
+camera.position = (6, 5, -6)
+camera.rotation = (28, -45, 0)
 
-# 3. Create a clean HUD on screen to show currency
+# 3. Add Directional Light (Sun) to create beautiful 3D shading/shadows
+sun = DirectionalLight()
+sun.look_at(Vec3(-1, -1.5, 1)) # Point the light diagonally downwards
+
+# 4. Create a clean HUD on screen to show currency
 hud_text = Text(
     text=f"Money: ${state.money:.2f}  |  Passive: ${state.income_per_second:.1f}/s",
     position=(-0.85, 0.45), # Top-left corner of the screen
@@ -24,6 +31,7 @@ hud_text = Text(
     color=color.black
 )
 
+# Press Tab to toggle mouse lock
 def input(key):
     if key == 'escape':
         application.quit()
