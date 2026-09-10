@@ -2,7 +2,6 @@ from ursina import *
 from src.core.state import GameState
 from src.world.office import OfficeRoom
 
-# Initialize Ursina window with customized settings
 app = Ursina(
     title="3D Idle IT Coder",
     borderless=False
