@@ -12,7 +12,6 @@ state = GameState()
 office = OfficeRoom()
 
 # 2. Configure Beautiful Isometric Orthographic Camera
-# Orthographic projection eliminates perspective distortion, creating a clean low-poly style
 camera.orthographic = True
 camera.fov = 6.0 # Zoom level (lower value is closer)
 camera.position = (6, 5, -6)
