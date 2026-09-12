@@ -19,7 +19,7 @@ camera.rotation = (28, -45, 0)
 
 # 3. Add Directional Light (Sun) to create beautiful 3D shading/shadows
 sun = DirectionalLight()
-sun.look_at(Vec3(-1, -1.5, 1)) # Point the light diagonally downwards
+sun.look_at(Vec3(-1, -1.5, 1))
 
 # 4. Create a clean HUD on screen to show currency
 hud_text = Text(
