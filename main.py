@@ -24,7 +24,7 @@ sun.look_at(Vec3(-1, -1.5, 1))
 # 4. Create a clean HUD on screen to show currency
 hud_text = Text(
     text=f"Money: ${state.money:.2f}  |  Passive: ${state.income_per_second:.1f}/s",
-    position=(-0.85, 0.45), # Top-left corner of the screen
+    position=(-0.85, 0.45), 
     scale=2.0,
     color=color.black
 )
