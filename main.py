@@ -29,7 +29,6 @@ hud_text = Text(
     color=color.black
 )
 
-# Press Tab to toggle mouse lock
 def input(key):
     if key == 'escape':
         application.quit()
