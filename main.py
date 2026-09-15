@@ -36,7 +36,6 @@ def input(key):
         mouse.locked = not mouse.locked
 
 def update():
-    """This core game loop runs every frame"""
     state.update_passive_income(time.dt)
     
     hud_text.text = f"Money: ${state.money:.2f}  |  Passive: ${state.income_per_second:.1f}/s"
