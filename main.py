@@ -13,7 +13,7 @@ office = OfficeRoom()
 
 # 2. Configure Beautiful Isometric Orthographic Camera
 camera.orthographic = True
-camera.fov = 6.0 # Zoom level (lower value is closer)
+camera.fov = 6.0 
 camera.position = (6, 5, -6)
 camera.rotation = (28, -45, 0)
 
