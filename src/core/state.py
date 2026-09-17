@@ -1,6 +1,5 @@
 class GameState:
     def __init__(self):
-        # Core game currency
         self.money = 0.0
 
         # Upgrade levels (Monitor affects passive, Chair affects active, Coffee affects both)
