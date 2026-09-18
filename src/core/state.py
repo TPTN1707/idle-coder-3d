@@ -2,7 +2,6 @@ class GameState:
     def __init__(self):
         self.money = 0.0
 
-        # Upgrade levels (Monitor affects passive, Chair affects active, Coffee affects both)
         self.monitor_level = 1
         self.chair_level = 1
         self.coffee_level = 0
