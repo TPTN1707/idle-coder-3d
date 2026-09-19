@@ -6,7 +6,6 @@ class GameState:
         self.chair_level = 1
         self.coffee_level = 0
 
-        # Base prices for upgrades
         self.base_monitor_cost = 10.0
         self.base_chair_cost = 15.0
         self.base_coffee_cost = 50.0
